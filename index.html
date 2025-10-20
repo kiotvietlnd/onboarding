@@ -66,24 +66,24 @@
                 <a href="#" class="flex items-center flex-shrink-0" onclick="switchTab('homepage'); return false;"><img src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg" alt="KiotViet Logo" class="h-8"></a>
                 <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
                     <button data-target="homepage" class="nav-button active">Trang chủ</button>
-                    <button data-target="checklist" class="nav-button">Checklist</button>
-                    <button data-target="rules" class="nav-button">Quy định & Biểu mẫu</button>
+                    <button data-target="checklist" class="nav-button">Checklist Ngày đầu tiên</button>
+                    <button data-target="rules" class="nav-button">Tài nguyên & Biểu mẫu</button>
                     <button data-target="culture" class="nav-button">Văn hóa & Tổ chức</button>
-                    <button data-target="faq" class="nav-button">FAQ</button>
+                    <button data-target="faq" class="nav-button">Câu hỏi thường gặp</button>
                 </nav>
                 <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-slate-600"><i class="fas fa-bars text-xl"></i></button>
             </div>
         </div>
         <div x-show="mobileMenuOpen" x-cloak @click.away="mobileMenuOpen = false" class="md:hidden px-6 pb-4 border-t border-slate-200">
             <button data-target="homepage" @click="mobileMenuOpen = false" class="nav-button-mobile block py-2 font-medium text-slate-600 w-full text-left">Trang chủ</button>
-            <button data-target="checklist" @click="mobileMenuOpen = false" class="nav-button-mobile block py-2 font-medium text-slate-600 w-full text-left">Checklist</button>
-            <button data-target="rules" @click="mobileMenuOpen = false" class="nav-button-mobile block py-2 font-medium text-slate-600 w-full text-left">Quy định & Biểu mẫu</button>
+            <button data-target="checklist" @click="mobileMenuOpen = false" class="nav-button-mobile block py-2 font-medium text-slate-600 w-full text-left">Checklist Ngày đầu tiên</button>
+            <button data-target="rules" @click="mobileMenuOpen = false" class="nav-button-mobile block py-2 font-medium text-slate-600 w-full text-left">Tài nguyên & Biểu mẫu</button>
             <button data-target="culture" @click="mobileMenuOpen = false" class="nav-button-mobile block py-2 font-medium text-slate-600 w-full text-left">Văn hóa & Tổ chức</button>
-            <button data-target="faq" @click="mobileMenuOpen = false" class="nav-button-mobile block py-2 font-medium text-slate-600 w-full text-left">FAQ</button>
+            <button data-target="faq" @click="mobileMenuOpen = false" class="nav-button-mobile block py-2 font-medium text-slate-600 w-full text-left">Câu hỏi thường gặp</button>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         <!-- Trang 1: Homepage -->
         <section id="homepage" class="content-section active text-center" data-aos="fade-up">
@@ -105,10 +105,10 @@
 
         <!-- Trang 2: Checklist -->
         <section id="checklist" class="content-section" data-aos="fade-up">
-             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight text-center mb-12">Hành Trình Onboarding</h2>
+             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight text-center mb-12">Checklist Ngày đầu tiên</h2>
              <div class="space-y-8">
                 <div class="card border-2 border-blue-500 shadow-xl">
-                    <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-check-double mr-3 text-blue-600"></i>Checklist Ngày Đầu Tiên</h3>
+                    <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-check-double mr-3 text-blue-600"></i>Checklist Chi Tiết</h3>
                     <div class="space-y-6">
                         <div>
                             <h4 class="font-bold text-lg text-slate-700 mb-3 border-b pb-2">0) Trước khi bắt đầu</h4>
@@ -125,8 +125,28 @@
                              <ul class="space-y-3 text-sm text-slate-600">
                                 <li class="task-item"><label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"><span><strong>Làm thủ tục:</strong> Gặp team HR tại tầng 3 - tòa 1A.</span></label></li>
                                 <li class="task-item"><label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"><span><strong>Nhận thiết bị và đăng nhập:</strong> Đăng nhập máy tính và đổi mật khẩu.</span></label></li>
-                                <li class="task-item"><label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"><span><strong>Kích hoạt tài khoản công việc:</strong> Kích hoạt Confluence, Jira, CRM, HRM...</span></label></li>
-                                <li class="task-item"><label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"><span><strong>Đăng ký vé xe và Face ID:</strong> Gặp bộ phận hành chính.</span></label></li>
+                                <li class="task-item">
+                                    <label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0">
+                                        <div>
+                                            <span><strong>Kích hoạt tài khoản công việc:</strong> Kích hoạt Confluence, Jira, CRM, HRM...</span>
+                                            <div class="pl-4 mt-2 text-xs space-y-1">
+                                                <a href="https://citigo.atlassian.net/wiki/spaces/KIOT/pages/44628410369/KV+Jira" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fab fa-jira w-4 text-center mr-2"></i>Hướng dẫn sử dụng Jira</a>
+                                                <a href="https://citigo.atlassian.net/wiki/spaces/KIOT/pages/44628344845/KV+Confluence+Wiki" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fab fa-confluence w-4 text-center mr-2"></i>Hướng dẫn sử dụng Confluence/Wiki</a>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li class="task-item">
+                                    <label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0">
+                                        <div>
+                                            <span><strong>Đăng ký vé xe và Face ID:</strong> Gặp bộ phận hành chính.</span>
+                                             <div class="pl-4 mt-2 text-xs space-y-1">
+                                                <a href="https://docs.google.com/forms/d/129iZq1wIw2gnBOQMCVuA6lTi8QU6IxHlRWGL9NWwmp0/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-id-card w-4 text-center mr-2"></i>Đăng ký FaceID</a>
+                                                <a href="https://docs.google.com/forms/d/169pmWh6Cg-Rd9icYc7zIgmNyfWXBCvvUizUaAx_eAgQ/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-motorcycle w-4 text-center mr-2"></i>Đăng ký vé xe (Tòa 1B)</a>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
                             </ul>
                         </div>
                          <div>
@@ -134,7 +154,7 @@
                              <ul class="space-y-3 text-sm text-slate-600">
                                 <li class="task-item"><label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"><span>Tham gia đào tạo theo lịch.</span></label></li>
                                 <li class="task-item"><label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"><span>Tham gia Google Chat và lưu thông tin đầu mối.</span></label></li>
-                                <li class="task-item"><label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"><span>Tham gia Google Space Bản XI.</span></label></li>
+                                <li class="task-item"><label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"><span>Tham gia Google Space <a href="https://mail.google.com/chat/u/0/#chat/space/AAAAQn37ucE" target="_blank" class="text-kv-blue font-semibold hover:underline">Bản XI</a>.</span></label></li>
                                 <li class="task-item"><label class="flex items-start cursor-pointer"><input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0"><span>Làm việc tại team để tìm hiểu công việc.</span></label></li>
                             </ul>
                         </div>
@@ -146,12 +166,13 @@
                         </div>
                     </div>
                 </div>
+                <img src="https://matma.com.vn/wp-content/uploads/2022/06/citigo-va-zoho-mail.jpg" alt="KiotViet Workspace" class="w-full rounded-2xl shadow-lg object-cover mt-12" data-aos="zoom-in">
              </div>
         </section>
 
         <!-- Trang 3: Quy định & Biểu mẫu -->
         <section id="rules" class="content-section" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight text-center mb-12">Tài Nguyên & Biểu Mẫu</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight text-center mb-12">Tài nguyên & Biểu mẫu</h2>
              <div class="card p-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Column 1: Quy định & Chính sách -->
@@ -187,6 +208,12 @@
                     </div>
                 </div>
              </div>
+             <div class="mt-8 p-8 bg-kv-blue rounded-2xl text-white shadow-lg text-left" data-aos="fade-up">
+                <h4 class="font-extrabold text-2xl">Khám phá Thư viện Đào tạo KiotViet</h4>
+                <p class="text-blue-100 mt-2">Đây là kênh cập nhật các kiến thức sản phẩm Retail, FNB, Salon, Hotel, Web, Employee, E-Invoice...</p>
+                <a href="https://sites.google.com/view/thuvienkiotviet" target="_blank" class="mt-4 inline-block font-semibold bg-green-500 text-white py-2 px-5 rounded-full hover:bg-green-600 transition-transform hover:scale-105">Khám phá Thư viện KiotViet <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+            </div>
+            <img src="https://about.kiotviet.vn/wp-content/uploads/2025/06/Screenshot-2025-06-25-at-16.28.05-min-18-1-1536x783.png" alt="Citigo and Zoho Mail" class="w-full rounded-2xl shadow-lg object-cover mt-8" data-aos="zoom-in">
         </section>
         
         <!-- Trang 4: Văn hóa & Tổ chức -->
@@ -275,12 +302,12 @@
                     </div>
                  </div>
             </div>
-             <img src="https://about.kiotviet.vn/wp-content/uploads/2025/06/Screenshot-2025-06-25-at-16.28.05-min-18-1-1536x783.png" alt="Banner Giá trị cốt lõi" class="w-full rounded-2xl shadow-lg object-cover mt-16" data-aos="zoom-in">
+             <img src="https://employer.jobsgo.vn/uploads/media/img/202310/pictures_library_141096_20231011103552_5495.jpg" alt="Banner Giá trị cốt lõi" class="w-full rounded-2xl shadow-lg object-cover mt-16" data-aos="zoom-in">
         </section>
 
         <!-- Trang 5: FAQ -->
         <section id="faq" class="content-section" data-aos="fade-up">
-             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight text-center mb-12">Những câu hỏi thường gặp (FAQ)</h2>
+             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight text-center mb-12">Câu hỏi thường gặp</h2>
              <div class="card">
                 <div class="space-y-2" x-data="{ openFaq: null }">
                      <!-- FAQ Item -->
@@ -335,10 +362,11 @@
                             <span class="flex items-center"><i class="fas fa-plane-departure w-8 text-center text-xl text-red-500 mr-4"></i><span>Quy định xin nghỉ phép như thế nào?</span></span>
                              <i class="fas fa-chevron-down transition-transform" :class="openFaq === 5 ? 'rotate-180' : ''"></i>
                         </button>
-                         <div x-show="openFaq === 5" x-collapse x-cloak class="mt-2 text-slate-600 text-sm pl-12"><p>Đọc chi tiết ở mục Điều 7: Nghỉ phép trong tài liệu Nội quy lao động. Bạn có thể tìm thấy tài liệu này ở mục "Quy định & Biểu mẫu", hoặc <a href="https://drive.google.com/file/d/1nTEpqqRj-nciLtPLMUlTXYqO6tpaj7R1/view" target="_blank" class="text-kv-blue font-semibold">click vào đây</a>.</p></div>
+                         <div x-show="openFaq === 5" x-collapse x-cloak class="mt-2 text-slate-600 text-sm pl-12"><p>Đọc chi tiết ở mục Điều 7: Nghỉ phép trong tài liệu Nội quy lao động. Bạn có thể tìm thấy tài liệu này ở mục "Tài nguyên & Biểu mẫu", hoặc <a href="https://drive.google.com/file/d/1nTEpqqRj-nciLtPLMUlTXYqO6tpaj7R1/view" target="_blank" class="text-kv-blue font-semibold">click vào đây</a>.</p></div>
                      </div>
                 </div>
             </div>
+            <img src="https://employer.jobsgo.vn/uploads/media/img/202310/pictures_library_141096_20231011103552_8882.jpg" alt="KiotViet Event" class="w-full rounded-2xl shadow-lg object-cover mt-12" data-aos="zoom-in">
         </section>
 
     </main>
@@ -348,7 +376,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-300">
             <h3 class="text-xl font-bold text-white mb-4">Cần Hỗ Trợ Nhanh?</h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm max-w-4xl mx-auto mb-12">
-                <p><strong class="block text-slate-200">Nhân sự (HR):</strong> hr@kiotviet.com</p>
+                <p><strong class="block text-slate-200">Nhân sự khối Tech-Nonsale:</strong> hrit@kiotviet.com</p>
                 <p><strong class="block text-slate-200">IT Support:</strong> it-hotro@kiotviet.com</p>
                 <p><strong class="block text-slate-200">Hành chính (Admin):</strong> admin@kiotviet.com</p>
                 <p><strong class="block text-slate-200">Chính sách (C&B):</strong> cnb-kiotviet@kiotviet.com</p>
@@ -434,4 +462,6 @@
     </script>
 </body>
 </html>
+
+
 
