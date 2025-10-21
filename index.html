@@ -100,7 +100,7 @@
             <button id="start-journey-btn" class="mt-10 inline-flex items-center justify-center px-8 py-3 bg-kv-blue text-white font-bold rounded-full shadow-lg hover:bg-kv-blue-dark transition-transform hover:scale-105">
                 Bắt đầu hành trình của bạn <i class="fas fa-arrow-right ml-3"></i>
             </button>
-             <img src="https://cdn4.vieclam24h.vn/AD_4n_Xd1p6_VH_8_Pfye_B9vb1_Uv_KZ_Ylodw6_Oeft_Slf_Es_V_Ttq_ZS_Nl_d8bea875fa.jpeg" alt="Banner KiotViet Team" class="w-full rounded-2xl shadow-lg object-cover mt-16" data-aos="zoom-in">
+             <img src="https://i.postimg.cc/zXYVm6Z1/VP3.jpg" alt="Banner KiotViet Team" class="w-full rounded-2xl shadow-lg object-cover mt-16" data-aos="zoom-in">
         </section>
 
         <!-- Trang 2: Checklist -->
@@ -142,6 +142,7 @@
                                             <span><strong>Đăng ký vé xe và Face ID:</strong> Gặp bộ phận hành chính.</span>
                                              <div class="pl-4 mt-2 text-xs space-y-1">
                                                 <a href="https://docs.google.com/forms/d/129iZq1wIw2gnBOQMCVuA6lTi8QU6IxHlRWGL9NWwmp0/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-id-card w-4 text-center mr-2"></i>Đăng ký FaceID</a>
+                                                <a href="https://docs.google.com/forms/d/13lv1F09tT4bDsDTNVUgJYHCN7JzxYbBXLnEMRiQoT7w/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-motorcycle w-4 text-center mr-2"></i>Đăng ký vé xe (Tòa 1A)</a>
                                                 <a href="https://docs.google.com/forms/d/169pmWh6Cg-Rd9icYc7zIgmNyfWXBCvvUizUaAx_eAgQ/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-motorcycle w-4 text-center mr-2"></i>Đăng ký vé xe (Tòa 1B)</a>
                                             </div>
                                         </div>
@@ -166,7 +167,59 @@
                         </div>
                     </div>
                 </div>
-                <img src="https://matma.com.vn/wp-content/uploads/2022/06/citigo-va-zoho-mail.jpg" alt="KiotViet Workspace" class="w-full rounded-2xl shadow-lg object-cover mt-12" data-aos="zoom-in">
+                <div class="card border-2 border-green-500 shadow-xl">
+                    <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-file-signature mr-3 text-green-600"></i>Thỏa thuận chung</h3>
+                    <div class="space-y-4">
+                        <label class="flex items-start cursor-pointer text-sm text-slate-600">
+                            <input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0">
+                            <span>Ứng viên xác nhận đã đọc, hiểu và tự nguyện đồng ý để Công ty cùng các bên liên quan hợp pháp thu thập, lưu trữ, sử dụng và xử lý dữ liệu cá nhân của mình theo các nội dung của bản <a href="https://about.kiotviet.vn/wp-content/themes/citigo/privacy-agreement.php" target="_blank" class="text-kv-blue font-semibold hover:underline">Thỏa Thuận</a> này.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Slider -->
+                <div x-data="{
+                    images: [
+                        'https://i.postimg.cc/59hF4jzQ/1.jpg',
+                        'https://i.postimg.cc/NG3rsLXT/3.jpg',
+                        'https://i.postimg.cc/05TJkrSM/4.jpg',
+                        'https://i.postimg.cc/FFMJr1SS/5.jpg'
+                    ],
+                    currentIndex: 0,
+                    next() {
+                        this.currentIndex = this.currentIndex === this.images.length - 1 ? 0 : this.currentIndex + 1;
+                    },
+                    prev() {
+                        this.currentIndex = this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex - 1;
+                    },
+                    init() {
+                        setInterval(() => { this.next() }, 5000);
+                    }
+                }" x-init="init()" class="relative w-full max-w-5xl mx-auto mt-8" data-aos="zoom-in">
+                    <!-- Image -->
+                    <div class="overflow-hidden rounded-2xl shadow-lg">
+                        <div class="flex transition-transform duration-500 ease-in-out" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
+                            <template x-for="image in images" :key="image">
+                                <div class="w-full flex-shrink-0">
+                                    <img :src="image" alt="KiotViet Workspace" class="w-full h-auto object-cover aspect-[2/1]">
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <!-- Prev/Next Buttons -->
+                    <button @click="prev()" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white text-slate-700 rounded-full w-10 h-10 flex items-center justify-center shadow-md transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button @click="next()" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white text-slate-700 rounded-full w-10 h-10 flex items-center justify-center shadow-md transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <!-- Dots -->
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                        <template x-for="(image, index) in images" :key="index">
+                            <button @click="currentIndex = index" :class="{'bg-white': currentIndex === index, 'bg-white/50': currentIndex !== index}" class="w-3 h-3 rounded-full transition"></button>
+                        </template>
+                    </div>
+                </div>
              </div>
         </section>
 
@@ -302,7 +355,7 @@
                     </div>
                  </div>
             </div>
-             <img src="https://employer.jobsgo.vn/uploads/media/img/202310/pictures_library_141096_20231011103552_5495.jpg" alt="Banner Giá trị cốt lõi" class="w-full rounded-2xl shadow-lg object-cover mt-16" data-aos="zoom-in">
+             <img src="https://employer.jobsgo.vn/uploads/media/img/202310/pictures_library_141096_20231011103552_8882.jpg" alt="Banner Giá trị cốt lõi" class="w-full rounded-2xl shadow-lg object-cover mt-16" data-aos="zoom-in">
         </section>
 
         <!-- Trang 5: FAQ -->
@@ -366,7 +419,7 @@
                      </div>
                 </div>
             </div>
-            <img src="https://employer.jobsgo.vn/uploads/media/img/202310/pictures_library_141096_20231011103552_8882.jpg" alt="KiotViet Event" class="w-full rounded-2xl shadow-lg object-cover mt-12" data-aos="zoom-in">
+            <img src="https://cdn4.vieclam24h.vn/AD_4n_Xd1p6_VH_8_Pfye_B9vb1_Uv_KZ_Ylodw6_Oeft_Slf_Es_V_Ttq_ZS_Nl_d8bea875fa.jpeg" alt="KiotViet Event" class="w-full rounded-2xl shadow-lg object-cover mt-12" data-aos="zoom-in">
         </section>
 
     </main>
