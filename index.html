@@ -141,13 +141,19 @@
                                         <div>
                                             <span><strong>Đăng ký vé xe và Face ID:</strong> Gặp bộ phận hành chính.</span>
                                              <div class="pl-4 mt-2 text-xs space-y-1">
-                                                <!-- UPDATED LINKS -->
                                                 <a href="https://docs.google.com/forms/d/129iZq1wIw2gnBOQMCVuA6lTi8QU6IxHlRWGL9NWwmp0/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-id-card w-4 text-center mr-2"></i>Đăng ký FaceID (Tòa 1A)</a>
                                                 <a href="https://docs.google.com/forms/d/13lv1F09tT4bDsDTNVUgJYHCN7JzxYbBXLnEMRiQoT7w/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-motorcycle w-4 text-center mr-2"></i>Đăng ký vé xe (Tòa 1A)</a>
                                                 <a href="https://docs.google.com/forms/d/169pmWh6Cg-Rd9icYc7zIgmNyfWXBCvvUizUaAx_eAgQ/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-id-card w-4 text-center mr-2"></i>Đăng ký FaceID (Tòa 1B)</a>
                                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdR9R9rfNe7iheze0qCmPMILmAeB84VaHYKl92GNnu-pkW3Q/viewform" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-motorcycle w-4 text-center mr-2"></i>Đăng ký vé xe (Tòa 1B)</a>
                                             </div>
                                         </div>
+                                    </label>
+                                </li>
+                                <!-- MỤC MỚI BỔ SUNG -->
+                                <li class="task-item">
+                                    <label class="flex items-start cursor-pointer">
+                                        <input type="checkbox" class="mt-1 mr-3 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 flex-shrink-0">
+                                        <span><strong>Cài đặt Timesheet:</strong> Tải app và kích hoạt KiotViet Timesheet trên Google Chat. Hướng dẫn <a href="https://docs.google.com/document/d/13_MKMufqY-5lcYpXKZZRus81teT1eBBJik4-gMI8_Wg/edit?tab=t.0#heading=h.2oxjqo47esm1" target="_blank" class="text-kv-blue font-semibold hover:underline">Tại đây</a>.</span>
                                     </label>
                                 </li>
                             </ul>
@@ -180,7 +186,7 @@
                 </div>
 
                 <!-- Slider -->
-                <div x-data="{
+                <div x-data="{ 
                     images: [
                         'https://i.postimg.cc/59hF4jzQ/1.jpg',
                         'https://i.postimg.cc/NG3rsLXT/3.jpg',
@@ -193,11 +199,8 @@
                     },
                     prev() {
                         this.currentIndex = this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex - 1;
-                    },
-                    init() {
-                        setInterval(() => { this.next() }, 5000);
                     }
-                }" x-init="init()" class="relative w-full max-w-5xl mx-auto mt-8" data-aos="zoom-in">
+                }" class="relative w-full max-w-5xl mx-auto mt-8" data-aos="zoom-in">
                     <!-- Image -->
                     <div class="overflow-hidden rounded-2xl shadow-lg">
                         <div class="flex transition-transform duration-500 ease-in-out" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
@@ -246,12 +249,10 @@
                          <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center"><i class="fas fa-folder-open w-8 text-center text-2xl text-green-500 mr-3"></i><span>Biểu mẫu chung</span></h3>
                          <div class="space-y-3">
                             <a href="https://eportal.kiotviet.vn/" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-door-open w-5 text-center text-slate-500 mr-2"></i><span>Cổng tạo đơn nghỉ phép</span></a>
-                            <!-- Updated Links in Resources Section -->
                             <a href="https://docs.google.com/forms/d/129iZq1wIw2gnBOQMCVuA6lTi8QU6IxHlRWGL9NWwmp0/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-id-card w-5 text-center text-slate-500 mr-2"></i><span>FaceID Tòa 1A</span></a>
                             <a href="https://docs.google.com/forms/d/13lv1F09tT4bDsDTNVUgJYHCN7JzxYbBXLnEMRiQoT7w/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-motorcycle w-5 text-center text-slate-500 mr-2"></i><span>Vé xe Tòa 1A</span></a>
                             <a href="https://docs.google.com/forms/d/169pmWh6Cg-Rd9icYc7zIgmNyfWXBCvvUizUaAx_eAgQ/viewform?edit_requested=true" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-id-card w-5 text-center text-slate-500 mr-2"></i><span>FaceID Tòa 1B</span></a>
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdR9R9rfNe7iheze0qCmPMILmAeB84VaHYKl92GNnu-pkW3Q/viewform" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-motorcycle w-5 text-center text-slate-500 mr-2"></i><span>Vé xe Tòa 1B</span></a>
-                            <!-- End Updated Links -->
                             <a href="https://citigo.atlassian.net/servicedesk/customer/portal/8" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-headset w-5 text-center text-slate-500 mr-2"></i><span>Yêu cầu IT hỗ trợ</span></a>
                         </div>
                     </div>
@@ -280,8 +281,8 @@
             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight text-center mb-12">Văn hóa & Tổ chức</h2>
             <div class="grid lg:grid-cols-2 gap-8">
                 <div class="card lg:col-span-2">
-                     <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-lightbulb mr-3 text-yellow-500"></i>Văn hóa KiotViet</h3>
-                     <div class="space-y-8 text-slate-600">
+                      <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center"><i class="fas fa-lightbulb mr-3 text-yellow-500"></i>Văn hóa KiotViet</h3>
+                      <div class="space-y-8 text-slate-600">
                         <div class="space-y-6">
                             <div>
                                 <h4 class="font-bold text-xl text-slate-800 flex items-center"><i class="fas fa-eye w-8 text-center text-2xl text-purple-500 mr-4"></i><span>Tầm nhìn</span></h4>
@@ -333,7 +334,7 @@
                  <div class="card">
                       <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center"><i class="fas fa-sitemap mr-2 text-green-500"></i>Sơ đồ tổ chức & Ban lãnh đạo</h3>
                       <p class="text-slate-600 mb-4">Xem sơ đồ tổ chức tổng quan và tìm hiểu về những người đang dẫn dắt KiotViet.</p>
-                       <div class="space-y-3">
+                        <div class="space-y-3">
                             <a href="https://citigo.atlassian.net/wiki/spaces/KIOT/pages/19261588015/S+T+CH+C" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-sitemap w-5 text-center text-slate-500 mr-2"></i><span>Sơ đồ chung toàn công ty</span></a>
                             <a href="https://drive.google.com/file/d/1myW3A0fpNByumdkZLzjE9wHxEUAMnQ68/view?usp=sharing" target="_blank" class="flex items-center text-kv-blue hover:underline"><i class="fas fa-layer-group w-5 text-center text-slate-500 mr-2"></i><span>Sơ đồ theo tầng / theo khối</span></a>
                        </div>
